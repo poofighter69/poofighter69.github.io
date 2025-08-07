@@ -3,33 +3,83 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Catch the Cat</title>
+  <title>ABConnect Platform</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Catch the Cat! 😺</h1>
-  <p>Click the cat before it moves!</p>
+  <header>
+    <h1>ABConnect</h1>
+    <nav>
+      <ul>
+        <li><a href="#dashboard">Dashboard</a></li>
+        <li><a href="#lostfound">Lost & Found</a></li>
+        <li><a href="#ecommerce">E-Commerce</a></li>
+        <li><a href="#documents">Documents</a></li>
+        <li><a href="#login">Login</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <div id="timer">⏱️ Time Left: 30s</div>
-  <div id="score">🎯 Score: 0</div>
+  <main>
+    <section id="dashboard">
+      <h2>Unified Dashboard</h2>
+      <p>Access all your campus services in one place.</p>
+    </section>
 
-  <div id="game-area">
-    <img
-      id="cat"
-      src="https://ih1.redbubble.net/image.5767727446.2329/bg,f8f8f8-flat,750x,075,f-pad,750x1000,f8f8f8.webp"
-      alt="Cat"
-    />
-  </div>
+    <section id="lostfound">
+      <h2>Lost & Found Tracking</h2>
+      <form id="lostFoundForm">
+        <input type="text" placeholder="Item Description" required />
+        <input type="file" />
+        <select>
+          <option value="lost">Lost</option>
+          <option value="found">Found</option>
+        </select>
+        <button type="submit">Submit</button>
+      </form>
+      <div id="lostFoundList"></div>
+    </section>
 
-  <button id="start-button">▶️ Start Game</button>
+    <section id="ecommerce">
+      <h2>Student E-Commerce</h2>
+      <form id="productForm">
+        <input type="text" placeholder="Product Name" required />
+        <input type="text" placeholder="Description" required />
+        <input type="file" />
+        <button type="submit">Post Product</button>
+      </form>
+      <div id="productList"></div>
+    </section>
+
+    <section id="documents">
+      <h2>Document Sharing</h2>
+      <form id="documentForm">
+        <input type="text" placeholder="Document Title" required />
+        <input type="file" />
+        <select>
+          <option value="public">Public</option>
+          <option value="private">Private</option>
+          <option value="shared">Shared</option>
+        </select>
+        <button type="submit">Upload</button>
+      </form>
+      <div id="documentList"></div>
+    </section>
+
+    <section id="login">
+      <h2>User Login</h2>
+      <form id="loginForm">
+        <input type="email" placeholder="Email" required />
+        <input type="password" placeholder="Password" required />
+        <button type="submit">Login</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 ABConnect - All rights reserved.</p>
+  </footer>
 
   <script src="script.js"></script>
-
-<!-- SOUND EFFECTS -->
-<audio id="click-sound" src="https://www.soundjay.com/button/sounds/button-16.mp3" preload="auto"></audio>
-<audio id="tick-sound" src="https://www.soundjay.com/clock/sounds/clock-ticking-1.mp3" preload="auto"></audio>
-<audio id="end-sound" src="https://www.soundjay.com/misc/sounds/fail-trombone-01.mp3" preload="auto"></audio>
-
-
 </body>
 </html>

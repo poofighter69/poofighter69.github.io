@@ -1,65 +1,102 @@
 body {
-  text-align: center;
-  font-family: sans-serif;
-  background-color: #f0f8ff;
   margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  color: #333;
+}
+
+header {
+  background: #2c3e50;
+  color: white;
+  padding: 1em;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
   padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1em;
 }
 
-h1 {
-  font-size: 5vw;
-  margin-top: 5vh;
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5em 1em;
+  border: 1px solid white;
+  border-radius: 4px;
 }
 
-p {
-  font-size: 4vw;
-  margin-bottom: 2vh;
+nav a:hover {
+  background: white;
+  color: #2c3e50;
 }
 
-#timer, #score {
-  font-size: 4vw;
-  margin: 1vh auto;
+main {
+  padding: 2em;
 }
 
-#game-area {
-  position: relative;
-  width: 90vw;
-  height: 60vh;
-  margin: auto;
-  background-color: #c2f0c2;
-  border: 3px solid #333;
-  overflow: hidden;
-  border-radius: 15px;
+section {
+  background: white;
+  margin-bottom: 2em;
+  padding: 1em;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-#cat {
-  position: absolute;
-  width: 15vw;
-  max-width: 80px;
-  height: auto;
-  cursor: pointer;
-  transition: top 0.2s, left 0.2s;
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  margin-top: 1em;
 }
 
-#start-button {
-  margin-top: 3vh;
-  padding: 1vh 2vw;
-  font-size: 4vw;
-  background-color: #4caf50;
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+  padding: 0.5em;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+input[type="file"] {
+  padding: 0.5em 0;
+}
+
+button {
+  padding: 0.75em;
+  background: #2980b9;
   color: white;
   border: none;
-  border-radius: 10px;
+  border-radius: 4px;
   cursor: pointer;
 }
 
-#start-button:hover {
-  background-color: #45a049;
+button:hover {
+  background: #3498db;
 }
 
-@media (max-width: 480px) {
-  h1 { font-size: 7vw; }
-  p { font-size: 5vw; }
-  #timer, #score { font-size: 5vw; }
-  #start-button { font-size: 5vw; }
-  #cat { width: 20vw; max-width: 60px; }
+footer {
+  background: #2c3e50;
+  color: white;
+  text-align: center;
+  padding: 1em;
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+}
+
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  form {
+    width: 100%;
+  }
 }
