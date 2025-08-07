@@ -1,11 +1,147 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>My First Web Page</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>CATarata</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Make it mobile-friendly -->
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fef9f4;
+      color: #333;
+    }
+
+    header {
+      background-color: #f8c291;
+      color: rgb(26, 25, 25);
+      text-align: center;
+      padding: 30px 20px;
+      border-bottom: 4px solid #61c4ec;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 3em;
+      letter-spacing: 2px;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 40px 20px;
+      gap: 30px;
+    }
+
+    .cat-card {
+      background-color: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      width: 280px;
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+
+    .cat-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .cat-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .cat-card .info {
+      padding: 20px;
+    }
+
+    .cat-card h2 {
+      margin: 0 0 10px;
+      color: #ce5df3;
+    }
+
+    .cat-card p {
+      font-size: 0.95em;
+      line-height: 1.5;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9em;
+      background-color: #f475c1;
+      color: white;
+    }
+
+    /* 👇 Responsive styling */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2em;
+      }
+
+      .container {
+        padding: 20px 10px;
+        gap: 20px;
+      }
+
+      .cat-card {
+        width: 100%;
+        max-width: 90%;
+      }
+
+      .cat-card .info {
+        padding: 15px;
+      }
+
+      .cat-card p {
+        font-size: 0.9em;
+      }
+
+      footer {
+        font-size: 0.85em;
+      }
+    }
+  </style>
 </head>
 <body>
-  <h1>Hello from My Computer!</h1>
-  <p>This page is live from GitHub and can be viewed on my phone.</p>
+
+  <header>
+    <h1>🐾 Meow Meow Meow Meow... Ayay! 🐾</h1>
+    <p>Cute, pasaway, ug nawong ug isda Family of cats!</p>
+  </header>
+
+  <div class="container">
+    <div class="cat-card">
+      <img src="kil.jpg" alt="puti nga iring">
+      <div class="info">
+        <h2>Killua</h2>
+        <p>Uging cat nga maka iyk murag wala gipakaon sukad.</p>
+      </div>
+    </div>
+
+    <div class="cat-card">
+      <img src="beel.jpeg" alt="beelbu">
+      <div class="info">
+        <h2>Berbols</h2>
+        <p>Tabby cat nga di mabuhi sa gawas kay kulatahon ug lain iring.</p>
+      </div>
+    </div>
+
+    <div class="cat-card">
+      <img src="doko.jpg" alt="odd eyes">
+      <div class="info">
+        <h2>Hewgoodoko</h2>
+        <p>Odd eyes nga iring. Tigowk na.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Cat Lovers ng Dampalan Hub | Designed with love and catfoods 🧡
+  </footer>
+
 </body>
 </html>
