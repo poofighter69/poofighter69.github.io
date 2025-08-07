@@ -32,4 +32,10 @@ p {
   width: 15vw;
   max-width: 80px;
   height: auto;
-  cursor: poin
+  cursor: pointer;
+}
+
+#timer {
+  font-size: 4vw;
+  margin: 1vh auto;
+}
