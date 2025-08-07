@@ -1,3 +1,8 @@
+const clickSound = document.getElementById('click-sound');
+const tickSound = document.getElementById('tick-sound');
+const endSound = document.getElementById('end-sound');
+
+
 // DOM Elements
 const cat = document.getElementById('cat');
 const gameArea = document.getElementById('game-area');
@@ -5,9 +10,7 @@ const timerDisplay = document.getElementById('timer');
 const scoreDisplay = document.getElementById('score');
 const startButton = document.getElementById('start-button');
 
-const clickSound = document.getElementById('click-sound');
-const tickSound = document.getElementById('tick-sound');
-const endSound = document.getElementById('end-sound');
+
 
 // Game Variables
 let score = 0;
