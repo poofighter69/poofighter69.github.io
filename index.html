@@ -1,22 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Catch the Cat</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <h1>Catch the Cat! 😺</h1>
   <p>Click the cat before it moves!</p>
- 
+
   <div id="timer">⏱️ Time Left: 30s</div>
+  <div id="score">🎯 Score: 0</div>
 
   <div id="game-area">
-    <img id="cat" src="https://ih1.redbubble.net/image.5767727446.2329/bg,f8f8f8-flat,750x,075,f-pad,750x1000,f8f8f8.webp" alt="Cat">
+    <img
+      id="cat"
+      src="https://ih1.redbubble.net/image.5767727446.2329/bg,f8f8f8-flat,750x,075,f-pad,750x1000,f8f8f8.webp"
+      alt="Cat"
+    />
   </div>
 
-
+  <button id="start-button">▶️ Start Game</button>
 
   <script src="script.js"></script>
+
+  <!-- SOUND EFFECTS -->
+<audio id="click-sound" src="https://www.soundjay.com/button/sounds/button-16.mp3" preload="auto"></audio>
+<audio id="tick-sound" src="https://www.soundjay.com/clock/sounds/clock-ticking-1.mp3" preload="auto"></audio>
+<audio id="end-sound" src="https://www.soundjay.com/misc/sounds/fail-trombone-01.mp3" preload="auto"></audio>
+
+
+
 </body>
 </html>

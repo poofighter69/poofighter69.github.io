@@ -16,6 +16,11 @@ p {
   margin-bottom: 2vh;
 }
 
+#timer, #score {
+  font-size: 4vw;
+  margin: 1vh auto;
+}
+
 #game-area {
   position: relative;
   width: 90vw;
@@ -33,9 +38,28 @@ p {
   max-width: 80px;
   height: auto;
   cursor: pointer;
+  transition: top 0.2s, left 0.2s;
 }
 
-#timer {
+#start-button {
+  margin-top: 3vh;
+  padding: 1vh 2vw;
   font-size: 4vw;
-  margin: 1vh auto;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#start-button:hover {
+  background-color: #45a049;
+}
+
+@media (max-width: 480px) {
+  h1 { font-size: 7vw; }
+  p { font-size: 5vw; }
+  #timer, #score { font-size: 5vw; }
+  #start-button { font-size: 5vw; }
+  #cat { width: 20vw; max-width: 60px; }
 }

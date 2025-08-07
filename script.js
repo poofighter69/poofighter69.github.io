@@ -1,18 +1,24 @@
+// DOM Elements
 const cat = document.getElementById('cat');
 const gameArea = document.getElementById('game-area');
 const timerDisplay = document.getElementById('timer');
+const scoreDisplay = document.getElementById('score');
+const startButton = document.getElementById('start-button');
 
+const clickSound = document.getElementById('click-sound');
+const tickSound = document.getElementById('tick-sound');
+const endSound = document.getElementById('end-sound');
+
+// Game Variables
 let score = 0;
-let gameTime = 30; // seconds
-let moveInterval = 2000; // ms (starts slow)
-let moveTimer;
-let gameTimer;
-let gameOver = false;
+let gameTime = 30;
+let moveInterval = 2000;
+let moveTimer = null;
+let gameTimer = null;
+let gameOver = true;
 
-// Move cat to random position
+// Move cat randomly
 function moveCat() {
-  if (gameOver) return;
-
   const maxX = gameArea.clientWidth - cat.clientWidth;
   const maxY = gameArea.clientHeight - cat.clientHeight;
   const randX = Math.random() * maxX;
@@ -22,44 +28,66 @@ function moveCat() {
   cat.style.top = `${randY}px`;
 }
 
-// Handle click on cat
+// Handle cat click
 cat.addEventListener('click', () => {
   if (gameOver) return;
+
+  clickSound.currentTime = 0;
+  clickSound.play();
+
   score++;
+  scoreDisplay.textContent = `🎯 Score: ${score}`;
 });
 
-// Start the game
+// Start game logic
 function startGame() {
-  moveCat(); // initial move
+  // Reset values
+  score = 0;
+  gameTime = 30;
+  moveInterval = 2000;
+  gameOver = false;
 
-  // Cat keeps moving
+  timerDisplay.textContent = `⏱️ Time Left: ${gameTime}s`;
+  scoreDisplay.textContent = `🎯 Score: ${score}`;
+  startButton.disabled = true;
+
+  moveCat();
+
+  // Start moving the cat
   moveTimer = setInterval(moveCat, moveInterval);
 
   // Timer countdown
   gameTimer = setInterval(() => {
     gameTime--;
-
-    // 🕒 Update timer display
     timerDisplay.textContent = `⏱️ Time Left: ${gameTime}s`;
 
-    // Every 5 seconds, increase speed
+    // 🔊 ticking sound
+    tickSound.currentTime = 0;
+    tickSound.play();
+
+    // Speed up every 5 seconds
     if (gameTime % 5 === 0 && moveInterval > 400) {
       moveInterval -= 200;
       clearInterval(moveTimer);
       moveTimer = setInterval(moveCat, moveInterval);
     }
 
-    // End game
+    // Time's up
     if (gameTime <= 0) {
       clearInterval(gameTimer);
       clearInterval(moveTimer);
       gameOver = true;
       timerDisplay.textContent = `⏱️ Time’s up!`;
+
+      endSound.play();
+
       setTimeout(() => {
         alert(`⏱️ Time’s up!\n🎯 Final Score: ${score}`);
+        startButton.disabled = false;
       }, 300);
     }
   }, 1000);
 }
 
-startGame();
+// Start on button click
+startButton.addEventListener('click', startGame);
